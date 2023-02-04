@@ -4,7 +4,7 @@ const Question = ({ question, score, setScore }) => {
 
   return (
     <div className="question">
-      <h2>{question.question}</h2>
+      <h3>{question.question}</h3>
       <Answers question={question} score={score} setScore={setScore} />
     </div>
   );
