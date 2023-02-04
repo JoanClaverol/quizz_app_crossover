@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Answers = ({ question }) => {
+const Answers = ({ question, score, setScore }) => {
 
   const [correct, setCorrect] = useState(null);
 
@@ -10,6 +10,7 @@ const Answers = ({ question }) => {
   const handleClick = (e) => {
     if (e.target.innerText === question.correct_answer) {
       setCorrect(true);
+      setScore(score + 1);
     } else {
       setCorrect(false);
     }
