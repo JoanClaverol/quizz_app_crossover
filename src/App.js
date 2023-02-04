@@ -17,9 +17,10 @@ function App() {
       <UserForm userName={userName} setUserName={setUserName} />
       <Quizz score={score} setScore={setScore} data={data} />
       {userName ?
-        <h2 className="score">Score {score} / {data.length}</h2> :
+        <h2 className="score">{
+          userName.charAt(0).toUpperCase() + userName.slice(1)
+        } Score {score} / {data.length}</h2> :
         <h2 className="score">Please enter your name to see your results</h2>}
-
     </div>
   );
 }
