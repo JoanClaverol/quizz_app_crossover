@@ -3,13 +3,16 @@ import './App.css';
 import Header from './components/Header';
 import Quizz from './components/Quizz';
 import UserForm from './components/UserForm';
-import data from "./assets/data";
-
+// import data from "./assets/data";
+import useFetchData from './components/useFetchData';
 
 function App() {
 
   const [userName, setUserName] = useState('');
   const [score, setScore] = useState(0);
+
+  const url = 'https://opentdb.com/api.php?amount=4';
+  const data = useFetchData(url).data.results;
 
   return (
     <div className="App">
