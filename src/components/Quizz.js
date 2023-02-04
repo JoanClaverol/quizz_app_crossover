@@ -8,8 +8,8 @@ const Quizz = ({ score, setScore, data }) => {
         <div>Loading...</div> :
         data.map((question) => {
           return <Question question={question} score={score} setScore={setScore} />
-        }
-        )}
+        })
+      }
     </div>
 
   );

@@ -11,7 +11,7 @@ function App() {
   const [userName, setUserName] = useState('');
   const [score, setScore] = useState(0);
 
-  const url = 'https://opentdb.com/api.php?amount=4';
+  const url = 'https://opentdb.com/api.php?amount=10';
   const data = useFetchData(url).data.results;
 
   return (
@@ -20,10 +20,10 @@ function App() {
       <UserForm userName={userName} setUserName={setUserName} />
       <Quizz score={score} setScore={setScore} data={data} />
       {userName ?
-        <h2 className="score">{
+        <h1 className="score">{
           userName.charAt(0).toUpperCase() + userName.slice(1)
-        } Score {score} / {data.length}</h2> :
-        <h2 className="score">Please enter your name to see your results</h2>}
+        } Score {score} / {data.length}</h1> :
+        <h1 className="score">Please enter your name to see your results</h1>}
     </div>
   );
 }
