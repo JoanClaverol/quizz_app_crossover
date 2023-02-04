@@ -1,10 +1,6 @@
-import { useState } from "react";
-import data from "../assets/data";
 import Question from "./Question";
 
-const Quizz = () => {
-
-  const [score, setScore] = useState(0);
+const Quizz = ({ score, setScore, data }) => {
 
   return (
     <div className="quizz">
@@ -14,7 +10,6 @@ const Quizz = () => {
           return <Question question={question} score={score} setScore={setScore} />
         }
         )}
-      <h2 className="score">Score {score} / {data.length}</h2>
     </div>
 
   );

@@ -1,7 +1,9 @@
-const Header = () => {
+const Header = ({ userName }) => {
   return (
     <header>
-      <h1>Welcome to a Trivia Quizz</h1>
+      {userName ?
+        <h1>Welcome {userName} to a Trivia Quizz</h1> :
+        <h1>Welcome to a Trivia Quizz, please enter your name</h1>}
     </header>
   );
 };
