@@ -8,7 +8,7 @@ const UserForm = ({ userName, setUserName }) => {
   return (
     <>
       {!userName ?
-        <form onSubmit={handleSubmit}>
+        <form  onSubmit={handleSubmit}>
           <input type="text" placeholder="First Name" />
         </form> :
         null

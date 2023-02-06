@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  text-align: center;
   background-color: #551c9f;
   min-height: 100vh;
   display: flex;
@@ -9,6 +8,8 @@
   justify-content: center;
   font-size: calc(12px + 2vmin);
   color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
 }
 
 
