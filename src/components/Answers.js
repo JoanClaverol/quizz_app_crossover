@@ -1,3 +1,4 @@
+import { Button } from "react-bootstrap";
 import { useState } from "react";
 
 const Answers = ({ question, score, setScore }) => {
@@ -21,7 +22,11 @@ const Answers = ({ question, score, setScore }) => {
       {correct === null ?
         (answers.map((answer) => {
           return (
-            <button onClick={(e) => handleClick(e)}>{answer}</button>
+            <Button
+              variant="primary"
+              onClick={(e) => handleClick(e)}
+              size="sm"
+              style={{ margin: '5px 2px' }}>{answer}</Button>
           );
         })) : correct === true || correct === false ? (
           correct ? <div>Correct!</div> : <div>Incorrect!</div>

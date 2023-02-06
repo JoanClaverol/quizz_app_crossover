@@ -1,12 +1,13 @@
+import { Card } from "react-bootstrap";
 import Answers from "./Answers";
 
 const Question = ({ question, score, setScore }) => {
 
   return (
-    <div className="question">
-      <h3>{question.question}</h3>
+    <Card className="question">
+      <Card.Title>{question.question}</Card.Title>
       <Answers question={question} score={score} setScore={setScore} />
-    </div>
+    </Card>
   );
 }
 
