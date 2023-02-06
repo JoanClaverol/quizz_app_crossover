@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { Button, Container, Row, Col } from 'react-bootstrap';
 
 const Answers = ({ question, score, setScore }) => {
-
   const [correct, setCorrect] = useState(null);
 
   const answers = [...question.incorrect_answers, question.correct_answer];
@@ -14,20 +14,38 @@ const Answers = ({ question, score, setScore }) => {
     } else {
       setCorrect(false);
     }
-  }
+  };
 
   return (
-    <div className="answers">
-      {correct === null ?
-        (answers.map((answer) => {
-          return (
-            <button onClick={(e) => handleClick(e)}>{answer}</button>
-          );
-        })) : correct === true || correct === false ? (
-          correct ? <div>Correct!</div> : <div>Incorrect!</div>
-        ) : null}
-    </div>
+    <Container>
+      <Row>
+        {correct === null
+          ? answers.map((answer) => (
+              <Col xs={12} md={6} lg={4}>
+                <Button
+                  className="mb-3"
+                  variant="primary"
+                  onClick={(e) => handleClick(e)}
+                  block
+                >
+                  {answer}
+                </Button>
+              </Col>
+            ))
+          : correct === true || correct === false
+          ? correct ? (
+              <Col xs={12}>
+                <div className="text-center">Correct!</div>
+              </Col>
+            ) : (
+              <Col xs={12}>
+                <div className="text-center">Incorrect!</div>
+              </Col>
+            )
+          : null}
+      </Row>
+    </Container>
   );
-}
+};
 
 export default Answers;

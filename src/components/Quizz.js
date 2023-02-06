@@ -1,18 +1,29 @@
+
 import Question from "./Question";
+import { Container, Row, Col, Spinner } from "react-bootstrap";
 
 const Quizz = ({ score, setScore, data }) => {
-
   return (
-    <div className="quizz">
-      {!data ?
-        <div>Loading...</div> :
-        data.map((question) => {
-          return <Question question={question} score={score} setScore={setScore} />
-        })
-      }
-    </div>
-
+    <Container>
+      <Row>
+        <Col>
+          {!data ? (
+            <Spinner animation="border" role="status">
+              <span className="sr-only">Loading...</span>
+            </Spinner>
+          ) : (
+            data.map((question) => {
+              return <Question question={question} score={score} setScore={setScore} />;
+            })
+          )}
+        </Col>
+      </Row>
+    </Container>
   );
-}
+};
 
 export default Quizz;
+
+
+
+

@@ -1,36 +1,8 @@
 .App {
   text-align: center;
-  background-color: #551c9f;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(12px + 2vmin);
-  color: white;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 20px;
-}
 
+  background: linear-gradient(135deg, orange 60%, cyan);
 
-.score {
-  margin-top: 30px;
-  font-size: 30px;
-}
-button:hover {
-  background-color: rgb(85, 240, 12);
-}
-.form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  flex-direction: column;
-}
-.form-input {
-  padding: 20px;
-  font-size: 18px;
-  border-radius: 5px;
-  border: none;
-  margin-top: 20px;
+  background-size: cover;
+  height: 200vh;
 }
